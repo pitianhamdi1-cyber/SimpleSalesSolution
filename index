@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SaleSimpelSolution</title>
+  <!-- 🔹 Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png">
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: linear-gradient(135deg, #ffffff, #f0f8ff);
+      margin: 0;
+      color: #222;
+    }
+    header {
+      background: #007BFF; /* biru utama */
+      color: white;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding: 14px 20px;
+    }
+    header img { width: 80px; }
+    header p {
+      margin: 0;
+      font-size: 1.2rem;
+      font-style: italic;
+      opacity: 0.95;
+    }
+    section {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 25px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    h2 { color: #007BFF; }
+    ul { list-style: none; padding: 0; }
+    ul li {
+      background: #e6f0ff;
+      margin: 6px 0;
+      padding: 10px;
+      border-radius: 6px;
+    }
+    .download-btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 22px;
+      background: #007BFF;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .download-btn:hover { background: #0056b3; }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .gallery img {
+      width: 200px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .gallery img:hover { transform: scale(1.05); }
+    #lightbox {
+      display:none;
+      position:fixed;
+      top:0; left:0;
+      width:100%; height:100%;
+      background:rgba(0,0,0,0.9);
+      justify-content:center;
+      align-items:center;
+      z-index:9999;
+    }
+    #lightbox img {
+      max-width:95%;
+      max-height:95%;
+      border-radius:8px;
+    }
+    footer {
+      background: #007BFF;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-top: 30px;
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="SaleSimpelSolution Logo">
+    <p>Solusi kasir simpel & modern</p>
+  </header>
+
+  <section>
+    <h2>Apa itu SaleSimpelSolution?</h2>
+    <p>
+      SaleSimpelSolution adalah aplikasi kasir sederhana dengan nuansa modern,
+      membantu UMKM dan bisnis retail mengelola transaksi, stok, laporan, dan administrasi dengan cepat.
+    </p>
+
+    <h2>Fitur Utama</h2>
+    <ul>
+      <li>📊 Laporan transaksi & stok otomatis</li>
+      <li>🛒 Kasir digital dengan struk cetak</li>
+      <li>🔐 Manajemen admin & user</li>
+      <li>📦 Monitoring stok & resep bahan</li>
+      <li>💳 Metode pembayaran tunai & QRIS</li>
+    </ul>
+
+    <a href="LINK_DOWNLOAD_APK" class="download-btn">⬇️ Download Aplikasi</a>
+
+    <h2>Tampilan Aplikasi</h2>
+    <div class="gallery">
+      <img src="1.jpg" alt="Screenshot 1">
+      <img src="2.jpg" alt="Screenshot 2">
+      <img src="3.jpg" alt="Screenshot 3">
+      <img src="4.jpg" alt="Screenshot 4">
+    </div>
+  </section>
+
+  <div id="lightbox">
+    <img id="lightbox-img" src="">
+  </div>
+
+  <script>
+    const galleryImgs = document.querySelectorAll('.gallery img');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+
+    galleryImgs.forEach(img => {
+      img.addEventListener('click', () => {
+        lightbox.style.display = 'flex';
+        lightboxImg.src = img.src;
+      });
+    });
+
+    lightbox.addEventListener('click', () => {
+      lightbox.style.display = 'none';
+    });
+  </script>
+
+  <footer>
+    <p>&copy; 2026 SaleSimpelSolution. All rights reserved.</p>
+  </footer>
+</body>
+</html>
